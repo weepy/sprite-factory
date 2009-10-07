@@ -52,6 +52,7 @@ Links
 * [Javascript File](http://github.com/weepy/sprite-factory/raw/master/sprite-factory.js)
 * [Github Project](http://github.com/weepy/sprite-factory)
 * [Issue Tracker](http://github.com/weepy/sprite-factory/issues)
+* [Blog Post](http://blog.parkerfox.co.uk/2009/10/07/jquery-sprite-factory/)
 
 Compatibility
 ----
