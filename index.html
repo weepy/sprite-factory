@@ -1,1 +1,129 @@
-My GitHub Page
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js'></script>
+<script src='http://github.com/weepy/sprite-factory/raw/master/sprite-factory.js'></script>
+<link type="text/css" rel="stylesheet" media="screen" href="http://weepy.github.com/style.css"/>
+
+<style>
+.loading { background-color: yellow !important;}
+.float {float: left;}
+h2, hr {clear: both;}
+h2 {padding-bottom: 1em;}
+hr {padding: 30px 0;}
+#o1,#o2,#o3,#o4,#o5,#o6 {margin-right:60px;}
+li {list-style: disc;margin-left: 20px;}
+
+.clear { clear: both;}
+
+</style>
+
+<script>
+
+
+$().ready(function() {
+  $$ = $("#output")
+  var options = {
+                  src: "./chess.png", 
+                  width: 60, 
+                  height: 60, 
+                  index: [2,6]
+                }
+  var factory = new SpriteFactory(options)
+  $("#o1").append(factory.generate([1,2]))  
+  $("#o2").append(factory.generate([0,2]).attr("id", "b"))
+    
+
+  var options = {
+                  src: "http://github.com/weepy/sprite-factory/raw/master/chess.png?" + (new Date) ,   //
+                  width:60, 
+                  height:60, 
+                  index: [2,6], 
+                  light: true
+                }
+  var factory2 = new SpriteFactory(options)
+  $("#o4").append(factory2.generate([1,2]))
+  $("#o5").append(factory2.generate([1,2]).attr("id", "c"))
+  
+  
+  
+  var i = 0;
+  function update() {
+    factory.update($("#b"), [1,i])
+    factory2.update($("#c"), [1,i])
+    i = (i+1) % 5 
+  }
+  
+  setInterval(update, 300)
+  
+  
+})
+
+</script>
+
+
+
+<body>
+  <div id=output class=page>
+    <h1>Test: jQuery Sprite Factory</h1>
+    <hr/>
+    <h2>Default factory</h2>
+
+    
+
+    <div id="o1" class=float></div>
+    <div id="o2" class=float></div>
+  
+    <ul class=float>
+      <li>Full IE PNG transparency compatibility</li>
+      <li>Uses two dom elements per sprite</li>
+      <li>Preloading CSS</li>
+      <li>Updatable</li>
+    </ul>
+<pre class=clear>
+var options = {
+                src: "./chess.png", 
+                width: 60, 
+                height: 60, 
+                index: [2,6]
+              }
+var factory = new SpriteFactory(options)
+$("#o1").append(factory.generate([1,2]))  
+$("#o2").append(factory.generate([0,2]).attr("id", "b"))
+</pre>
+    <hr/>
+
+    <h2>Light factory</h2>
+    <div id="o4" class=float></div>
+    <div id="o5" class=float></div>
+
+    <ul class=float>
+    <li>Only 1 dom element per sprite</li>
+    <li>No IE PNG transparency</li>
+    <li>Preloading CSS</li>
+    <li>Updatable</li>
+</ul>
+<pre class=clear>
+var options = {
+                src: "http://..." , 
+                width: 60, 
+                height: 60, 
+                index: [2,6], 
+                light: true
+              }
+var factory2 = new SpriteFactory(options)
+$("#o4").append(factory2.generate([1,2]))
+$("#o5").append(factory2.generate([1,2]).attr("id", "c"))
+</pre>
+
+
+
+    <hr/>
+    
+     <h2>links</h2>
+     <ul>
+     <li><a href='http://github.com/weepy/sprite-factory/raw/master/sprite-factory.js'>Javascript file</a></li> 
+     <li><a href='http://github.com/weepy/sprite-factory'>Project Page</a></li> 
+     <li><a href='http://github.com/weepy/sprite-factory/issues'>Feedback</a></li>
+ 
+     </ul>
+  </div>
+</body>
+
