@@ -6,7 +6,7 @@ A jQuery factory for creating sprites from images, even transparent PNG's in IE
 Features
 ----
 
-* Works from a rectuangluar grid of sprites.
+* Works from a rectangluar grid of sprites.
 * Fast, good for rendering large numbers of similar sprites
 * Preloading CSS for large images (will add the 'loading' class to the element until the image has been loaded)
 * Can use transparent PNGS for IE6 and IE7
