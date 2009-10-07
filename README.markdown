@@ -27,8 +27,8 @@ $().ready( function() {
                 }
   var factory = new SpriteFactory(options)
   $("#mydiv")
-    .append(factory.generate([1,2])
-    .append(factory.generate([1,3])
+    .append(factory.generate([1,2]))
+    .append(factory.generate([1,3]))
 })
 </pre>
 
