@@ -1,7 +1,7 @@
 Sprite Factory
 ========
 
-A jQuery factory for creating sprites from images. Each sprite created from a Sprite Factory is assumed to be the same size
+A jQuery factory for creating sprites from images, even transparent PNG's in IE
 
 Features
 ----
@@ -11,6 +11,7 @@ Features
 * Preloading CSS for large images (will add the 'loading' class to the element until the image has been loaded)
 * Can use transparent PNGS for IE6 and IE7
 * Light mode, using half the number of elements (only suitable for non-transparent images)
+* Easy to update sprite to a different index - useful for animation
 
 Example of use
 ----
@@ -24,9 +25,10 @@ $().ready( function() {
                   index: [2,6], 
                   light: true
                 }
-  var factory2 = new SpriteFactory(options)
-  $("#o4").append(factory2.generate([1,2]))
-  $("#o5").append(factory2.generate([1,2])
+  var factory = new SpriteFactory(options)
+  $("#mydiv")
+    .append(factory.generate([1,2]))
+    .append(factory.generate([1,3])
 })
 </pre>
 
